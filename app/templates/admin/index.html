@@ -1,0 +1,13 @@
+{% extends 'admin/master.html' %}
+
+{% block body %}
+    {% if current_user.is_authenticated %}
+    <h2>Hello,admin</h2>
+    {% else %}
+    <h3>你好，请登录</h3>
+    <a class="btn btn-info" href="{{ url_for('auth.logout') }}">登录</a>
+    {% endif %}
+
+
+
+{% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as macros %}
+{% block content %}
+    <div class="row justify-content-center p-3">
+        <form action="{{ url_for('main.playlists') }}" class="input-group col-5">
+            <input class="form-control" type="text" placeholder="请输入关键词搜索歌单" name="keyword" value="{{ keyword }}">
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+    <h2 class="mt-3">歌单推荐</h2>
+
+    <ul class="row list-unstyled mt-2">
+        {% for playlist in playlists %}
+            <li class="col-md-3 col-sm-4">
+                <a href="{{ url_for('main.playlist',id=playlist.id) }}">
+                    <img src="{{ playlist.cover }}" style="width: 100%;max-height: 360px;object-fit: cover"></a>
+                <p class="mt-2">{{ playlist.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+    {{ macros.pagination_widget(pagination,'main.playlists') }}
+
+{% endblock %}

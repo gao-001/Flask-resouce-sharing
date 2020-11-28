@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="' + os.path.join(basedir, 'data_dev" uuid="cea4436b-55ec-4f2a-a1b5-b399eab2c472">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:C:\Users\gao19\Documents\GitHub\flask-Sharing-master\app\' + os.path.join(basedir, 'data_dev.sqlite'</jdbc-url>
+    </data-source>
+  </component>
+</project>

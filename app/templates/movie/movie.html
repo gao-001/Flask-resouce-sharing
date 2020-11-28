@@ -1,0 +1,9 @@
+{% extends './base.html' %}
+{% block content %}
+<div class="mt-5 p-3">
+    <img class="position-absolute col-4 offset-4" style="width:400px" src="{{ movie.cover }}" onerror="this.src='{{ url_for('static',filename='images/default.png') }}'">
+    <p style="white-space: pre-line">{{ movie.content }}</p>
+    <br>
+    <a class="h4" href="{{ movie.down_url }}" style="white-space: pre">{{ movie.name }}  迅雷磁力链下载</a>
+</div>
+{% endblock %}

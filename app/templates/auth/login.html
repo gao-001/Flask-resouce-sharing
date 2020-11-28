@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="col-lg-4 offset-lg-4 mt-4">
+        <div class="page-header">
+            <h2 class="text-center font-weight-bold">登录</h2>
+        </div>
+        <form action="{{ url_for('auth.login') }}" method="post">
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                <label>用户名</label><br>
+                {{ form.username(class="form-control",autocomplete="off") }}
+            </div>
+            <div class="form-group">
+                <label>{{ form.password.label }}</label>
+                {{ form.password(class="form-control") }}
+            </div>
+
+            {{ form.submit(class="btn btn-primary") }}
+        </form>
+
+
+    </div>
+{% endblock %}

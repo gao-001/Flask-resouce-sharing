@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% import '_macros.html' as macros %}
+{% block content %}
+
+    <div class="row justify-content-center p-3">
+
+        <form action="{{ url_for('main.movie') }}" class="input-group col-5">
+            <input class="form-control" type="text" placeholder="请输入关键词搜索影片" name="keyword" value="{{ keyword }}">
+            <div class="input-group-append">
+                <input type="submit" class="btn btn-success">
+            </div>
+        </form>
+    </div>
+    <h2 class="mt-2">最新电影</h2>
+
+
+    <ul class="row list-unstyled mt-2">
+        {% for movie in movies %}
+            <li class="col-md-3 col-sm-4">
+                <a href="{{ url_for('main.get_movie',id=movie.id) }}">
+                    <img src="{{ movie.cover }}" style="width: 100%;max-height: 360px;object-fit: cover"
+                         onerror="this.src='{{ url_for('static',filename='images/default.png') }}'"></a>
+                <p>{{ movie.name }}</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    {{ macros.pagination_widget(pagination,'main.movie') }}
+
+{% endblock %}
